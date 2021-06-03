@@ -2,13 +2,15 @@ package main
 
 func main() {
 
-	scale := 2.0
-	cX, cY := -0.4, 0.6
+	path := "output/"
+
+	scale := 0.001
+	cX, cY := -1.777296, -0.005853
 
 	juliaGenerator := NewJulia(cX, cY, scale)
 	juliaGenerator.SetWidthHeigh(2000)
 
-	err := juliaGenerator.CreateImg()
+	err := juliaGenerator.CreateImg(path)
 	if err != nil {
 		panic(err)
 	}
