@@ -127,7 +127,7 @@ func (j *Julia) GenerateImg() *image.RGBA {
 	return j.Img
 }
 
-func (j *Julia) CreateImg() error {
+func (j *Julia) CreateImg(path string) error {
 
 	if j.Img == nil {
 		_ = j.GenerateImg()
@@ -139,7 +139,7 @@ func (j *Julia) CreateImg() error {
 		return err
 	}
 
-	imgFile, err := os.Create("output/" + j.filename)
+	imgFile, err := os.Create(path + j.filename)
 	if err != nil {
 		return err
 	}
